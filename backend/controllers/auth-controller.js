@@ -242,7 +242,7 @@ const resetPasswordRequest = async (req, res) => {
     const resetPasswordToken = jwt.sign(
       { userId: user._id, purpose: "reset-password" },
       process.env.JWT_SECRET,
-      { expiresIn: "15m" }
+      { expiresIn: "30d" }
     );
 
     await Verification.create({
